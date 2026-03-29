@@ -1,10 +1,11 @@
 [
   {
     "name": "Vibe Forecast",
-    "description": "A React Native mobile app offering AI-powered tarot, astrology, Yi-Jing, and BaZi readings — personalized spiritual insights on demand.",
-    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "Harness Engineering"],
+    "description": "A React Native mobile app offering AI-powered tarot, astrology, I-Ching, and BaZi readings — personalized spiritual insights on demand.",
+    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App purchase", "Harness Engineering"],
     "codeUrl": null,
-    "demoUrl": null
+    "demoUrl": null,
+    "videoUrl": "assets/demos/vibe-forecast-demo.mp4"
   },
   {
     "name": "MorphX",

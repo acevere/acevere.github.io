@@ -41,12 +41,20 @@ async function loadProjects() {
         <div class="card__links">
           ${p.codeUrl ? `<a class="card__link" href="${escapeHtml(p.codeUrl)}" target="_blank" rel="noopener noreferrer">View Code &rarr;</a>` : ''}
           ${p.demoUrl ? `<a class="card__link card__link--secondary" href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : ''}
+          ${p.videoUrl ? `<button class="card__link card__link--video" type="button" data-video="${escapeHtml(p.videoUrl)}" data-title="${escapeHtml(p.name)}">&#9654; Watch Demo</button>` : ''}
         </div>
       </article>
     `).join('');
 
     // Re-observe newly created cards for scroll reveal
     observeReveal();
+
+    // Wire up video overlay buttons
+    grid.querySelectorAll('.card__link--video').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openVideoOverlay(btn.dataset.video, btn.dataset.title);
+      });
+    });
   } catch (err) {
     grid.innerHTML = '<p style="color: var(--color-muted);">Could not load projects. Open via a local server or deploy to GitHub Pages.</p>';
     console.error(err);
@@ -59,6 +67,58 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+/* ==========================================
+   Video Overlay
+   ========================================== */
+let overlayEl = null;
+
+function buildOverlay() {
+  const el = document.createElement('div');
+  el.className = 'video-overlay';
+  el.setAttribute('role', 'dialog');
+  el.setAttribute('aria-modal', 'true');
+  el.setAttribute('aria-label', 'Demo video');
+  el.innerHTML = `
+    <div class="video-overlay__backdrop"></div>
+    <div class="video-overlay__panel">
+      <div class="video-overlay__header">
+        <span class="video-overlay__title"></span>
+        <button class="video-overlay__close" aria-label="Close">&times;</button>
+      </div>
+      <video class="video-overlay__video" controls playsinline></video>
+    </div>
+  `;
+  document.body.appendChild(el);
+
+  const close = () => closeVideoOverlay();
+  el.querySelector('.video-overlay__backdrop').addEventListener('click', close);
+  el.querySelector('.video-overlay__close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlayEl && overlayEl.classList.contains('is-open')) close();
+  });
+
+  return el;
+}
+
+function openVideoOverlay(src, title) {
+  if (!overlayEl) overlayEl = buildOverlay();
+  const video = overlayEl.querySelector('video');
+  overlayEl.querySelector('.video-overlay__title').textContent = title;
+  video.src = src;
+  overlayEl.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  overlayEl.querySelector('.video-overlay__close').focus();
+}
+
+function closeVideoOverlay() {
+  if (!overlayEl) return;
+  overlayEl.classList.remove('is-open');
+  document.body.style.overflow = '';
+  const video = overlayEl.querySelector('video');
+  video.pause();
+  video.src = '';
 }
 
 /* ==========================================
