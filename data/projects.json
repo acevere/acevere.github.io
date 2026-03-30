@@ -1,8 +1,8 @@
 [
   {
     "name": "Vibe Forecast",
-    "description": "A React Native mobile app offering AI-powered tarot, astrology, I-Ching, and BaZi readings — personalized spiritual insights on demand.",
-    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App purchase", "Harness Engineering"],
+    "description": "A React Native mobile app offering AI-powered tarot, horoscope, I-Ching hexagram, and BaZi pillars readings — personalized spiritual insights on demand.",
+    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App Purchase", "Harness Engineering"],
     "codeUrl": null,
     "demoUrl": null,
     "videoUrl": "assets/demos/vibe-forecast-demo.mp4"
@@ -12,7 +12,8 @@
     "description": "A 3D escape room PC game built with Unreal, featuring immersive puzzles and dynamic interaction.",
     "tags": ["Unreal Engine", "C#", ".NET", "MySQL", "Game Design", "Windows"],
     "codeUrl": null,
-    "demoUrl": null
+    "demoUrl": null,
+    "videoUrl": "assets/demos/morphx-demo-short.mp4"
   },{
     "name": "NeAR Me",
     "description": "An interactive AR app built with Unity featuring real-time location markers tailored to user interests, backed by an AI recommendation system.",
