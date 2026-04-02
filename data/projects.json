@@ -2,7 +2,7 @@
   {
     "name": "Vibe Forecast",
     "description": "A React Native mobile app offering AI-powered tarot, horoscope, I-Ching hexagram, and BaZi pillars readings — personalized spiritual insights on demand.",
-    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App Purchase", "Harness Engineering"],
+    "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App Purchase", "LLM Orchestration"],
     "codeUrl": null,
     "demoUrl": null,
     "videoUrl": "assets/demos/vibe-forecast-demo.mp4"
