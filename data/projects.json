@@ -1,5 +1,13 @@
 [
   {
+    "name": "Pawnik Attack!",
+    "description": "A mini test-your-reflex game.",
+    "tags": ["Mobile", "React Native", "TypeScript", "Firebase", "AdMob"],
+    "codeUrl": null,
+    "demoUrl": null,
+    "videoUrl": "assets/demos/pawnik-attack-demo.mp4"
+  },
+  {
     "name": "Vibe Forecast",
     "description": "A React Native mobile app offering AI-powered tarot, horoscope, I-Ching hexagram, and BaZi pillars readings — personalized spiritual insights on demand.",
     "tags": ["Mobile", "React Native", "TypeScript", "Gemini API", "Cloudflare", "In-App Purchase", "LLM Orchestration"],
