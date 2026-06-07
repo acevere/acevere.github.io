@@ -199,6 +199,7 @@ img {
   border-radius: 50%;
   border: 3px solid var(--color-accent);
   object-fit: cover;
+  object-position: center 10%;
 }
 
 .hero__content {
