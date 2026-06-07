@@ -188,6 +188,9 @@ img {
 
 .hero__photo-wrap {
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__photo {
